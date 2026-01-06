@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body { font-family: sans-serif; padding: 20px; display: flex; flex-direction: column; gap: 10px; }
+    input { padding: 10px; font-size: 16px; width: 90%; }
+    button { padding: 10px; font-size: 16px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 5px; }
+    button:hover { background-color: #0056b3; }
+    label { font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Fermi Server Settings</h2>
+  <label for="urlInput">Enter your Fermi Instance URL:</label>
+  <input type="text" id="urlInput" placeholder="https://fermi.chat">
+  <button id="saveBtn">Save & Reload</button>
+
+  <script>
+    const saveBtn = document.getElementById('saveBtn');
+    const urlInput = document.getElementById('urlInput');
+
+    saveBtn.addEventListener('click', () => {
+      const url = urlInput.value.trim();
+      if (url) {
+        // Send the URL to the main process
+        window.electronAPI.saveUrl(url);
+        // Close the window (optional, depends on UX preference, here we let Main handle logic or user closes)
+        window.close();
+      } else {
+        alert("Please enter a valid URL");
+      }
+    });
+  </script>
+</body>
+</html>

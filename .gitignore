@@ -1,0 +1,17 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Build output (The EXE files)
+dist/
+
+# Electron-specific
+.electron-builder.yaml
+*.log
+
+# Windows-specific system files
+Thumbs.db
+desktop.ini
+
+# Environment/Private data
+.env

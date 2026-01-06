@@ -1,0 +1,39 @@
+{
+  "name": "fermi-client",
+  "version": "1.0.0",
+  "description": "Desktop client for Fermi",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.drifty.fermi",
+    "productName": "Fermi Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        "portable"
+      ],
+	  "icon": "assets/logo.ico"
+    },
+    "portable": {
+      "artifactName": "Fermi-Portable.exe"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "settings.html",
+      "node_modules/**/*"
+    ]
+  },
+  "dependencies": {
+    "electron-store": "^8.2.0"
+  },
+  "devDependencies": {
+    "electron": "^latest",
+    "electron-builder": "^latest"
+  }
+}
