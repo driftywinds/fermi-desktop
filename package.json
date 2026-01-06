@@ -8,7 +8,7 @@
     "dist": "electron-builder"
   },
   "build": {
-    "appId": "com.drifty.fermi",
+    "appId": "Fermi Desktop",
     "productName": "Fermi Desktop",
     "directories": {
       "output": "dist"

@@ -102,6 +102,7 @@ ipcMain.on('save-url', (event, newUrl) => {
 });
 
 app.whenReady().then(() => {
+  app.setAppUserModelId("Fermi Desktop");
   setupPermissions();
   createWindow();
 });
